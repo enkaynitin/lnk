@@ -1,0 +1,31 @@
+
+
+{% block content %}
+{% if classical_guitars %}
+	<h2>Classical Guitars</h2>
+	<ul>
+    {% load static %}
+	{% for guitar in classical_guitars %}
+		<li>{{ guitar.plan_name.name }}</li>
+
+        {% for image in guitar.images.all %}
+
+            <img src= {{ image.image.url }}>
+        {% endfor %}
+
+        <audio controls>
+            <source src= {{ guitar.voice_sample.url }} type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <li>Top : {{ guitar.top_plates.name }}</li>
+        <li>Back plates and sides : {{ guitar.back_plates_and_sides.name }}</li>
+        <li>Neck : {{ guitar.neck_wood.name }}</li>
+        <li>braces : {{ guitar.braces.name }}</li>
+        <li>Neck Joint : {{ guitar.neck_joint.name }}</li>
+	</ul>
+    {% endfor %}
+{%else %}
+	<p>No guitars </p>
+{% endif %}
+{% endblock %}
+
