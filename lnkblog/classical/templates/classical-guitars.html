@@ -1,31 +1,73 @@
-
+{% extends 'base.html' %}
 
 {% block content %}
+{% load static %}
 {% if classical_guitars %}
-	<h2>Classical Guitars</h2>
-	<ul>
-    {% load static %}
-	{% for guitar in classical_guitars %}
-		<li>{{ guitar.plan_name.name }}</li>
 
-        {% for image in guitar.images.all %}
+    {% for guitar in classical_guitars %}
+    <article>
+        <h2>{{ guitar.plan_name.name }}</h2>
 
-            <img src= {{ image.image.url }}>
-        {% endfor %}
+      		<p>{{ guitar.description }}</p>
 
-        <audio controls>
-            <source src= {{ guitar.voice_sample.url }} type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <li>Top : {{ guitar.top_plates.name }}</li>
-        <li>Back plates and sides : {{ guitar.back_plates_and_sides.name }}</li>
-        <li>Neck : {{ guitar.neck_wood.name }}</li>
-        <li>braces : {{ guitar.braces.name }}</li>
-        <li>Neck Joint : {{ guitar.neck_joint.name }}</li>
-	</ul>
+    </article>
+
+    <aside>
+
+        <ul>
+            <div class="container">
+                {% for image in guitar.images.all %}
+                    <a href='{{ image.image.url }}'><img src={{ image.image.url }} alt="An image of guitar"></a>
+                {% endfor %}
+            </div>
+        </ul>
+
+        <h3>Sample Audio</h3>
+            <audio controls>
+                <source src= {{ guitar.voice_sample.url }} type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        <h3>Specifications</h3>
+        <table>
+            <colgroup span="2"></colgroup>
+            <tr>
+                <th>Component</th>
+                <th>Material</th>
+            </tr>
+            <tr>
+                <td>Top</td>
+                <td>{{ guitar.top_plates.name }}</td>
+            </tr>
+            <tr>
+                <td>Back plates and sides</td>
+                <td>{{ guitar.back_plates_and_sides.name }}</td>
+            </tr>
+            <tr>
+                <td>Neck</td>
+                <td>{{ guitar.neck_wood.name }}</td>
+            </tr>
+            <tr>
+                <td>Braces</td>
+                <td>{{ guitar.braces.name }}</td>
+            </tr>
+            <tr>
+                <td>Neck Joint</td>
+                <td>{{ guitar.neck_joint.name }}</td>
+            </tr>
+        </table>
+    </aside>
     {% endfor %}
 {%else %}
 	<p>No guitars </p>
 {% endif %}
 {% endblock %}
 
+
+
+      	<aside>
+      		<h2>Favourite photos</h2>
+
+      		<a href="favorite-2.jpg"><img src="favorite-2_th.jpg" alt="Top half of a pretty bird with bright blue plumage on neck, light colored beak, blue headdress, links to larger version of the image"></a>
+      		<a href="favorite-3.jpg"><img src="favorite-3_th.jpg" alt="Top half of a large bird with white plumage, very long curved narrow light colored break, links to larger version of the image"></a>
+      		<a href="favorite-4.jpg"><img src="favorite-4_th.jpg" alt="Large bird, mostly white plumage with black plumage on back and rear, long straight white beak, links to larger version of the image"></a>
+      	</aside>

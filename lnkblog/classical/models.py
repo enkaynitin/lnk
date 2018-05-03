@@ -9,6 +9,7 @@ import os
 class Guitar(models.Model):
 
     plan_name = models.ForeignKey(Plan, on_delete=models.CASCADE)
+    description = models.TextField()
     voice_sample = models.FileField(upload_to='media', null=True)
     top_plates = models.ForeignKey(Wood, on_delete=models.CASCADE, related_name='guitar_top', null=True)
     back_plates_and_sides = models.ForeignKey(Wood, on_delete=models.CASCADE, related_name='guitar_back', null=True)
