@@ -3,4 +3,4 @@ essentia/
 Pipfile
 Pipfile.lock
 *.pyc
-
+*.sqlite3
