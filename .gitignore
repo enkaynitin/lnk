@@ -1,6 +1,6 @@
 essentia/
 .idea/
-Pipfile
-Pipfile.lock
+
+
 *.pyc
 *.sqlite3
