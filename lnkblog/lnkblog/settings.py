@@ -25,7 +25,7 @@ SECRET_KEY = 'ymvfy*tn3u)xx++p%ujushwmfy*7xg62m22^^60g^m@9o)yv-e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['104.196.21.87', 'localhost', '127.0.0.1', 'www.luthiernitinkumar.com']
 
 
 # Application definition
@@ -154,6 +154,3 @@ DATABASES['default'].update(db_from_env)
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = [
-	'www.luthiernitinkumar.com',
-]
