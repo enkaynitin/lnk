@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'plans.apps.PlansConfig',
     'materials.apps.MaterialsConfig',
     'classical.apps.ClassicalConfig',
+    'guitarmaking.apps.GuitarmakingConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -31,6 +31,9 @@ def contact(request):
             contact_email = request.POST.get(
                 'contact_email'
             , '')
+            subject = request.POST.get(
+                'subject'
+            , '')
             form_content = request.POST.get('content', '')
 
             # Email the profile with the
@@ -39,6 +42,7 @@ def contact(request):
             context = {
                 'contact_name': contact_name,
                 'contact_email': contact_email,
+                'subject': subject,
                 'form_content': form_content,
             }
             content = template.render(context)

@@ -65,7 +65,7 @@ body {
 main, header, article, aside, footer, section {
   background: url("/static/home/ebony.jpg");
   padding: 1%;
-   background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 nav {
@@ -154,7 +154,12 @@ table {
     border-collapse: collapse;
 }
 
-table, th, td {
+table {
     border: 1px solid white;
-    font: white;
+}
+
+th, td, tr {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: white;
 }

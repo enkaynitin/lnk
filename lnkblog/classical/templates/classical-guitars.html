@@ -5,57 +5,65 @@
 {% if classical_guitars %}
 
     {% for guitar in classical_guitars %}
-    <article>
-        <h2>{{ guitar.plan_name.name }}</h2>
+    <main>
+        <article>
+            <h2>{{ guitar.plan_name.name }}</h2>
 
-        <p>{{ guitar.description }}</p>
+            <p>{{ guitar.description }}</p>
 
-    </article>
+        </article>
 
-    <aside>
+        <aside>
 
-        <ul>
-            <div class="container">
-                {% for image in guitar.images.all %}
-                    <a href='{{ image.image.url }}'><img src={{ image.image.url }} alt="An image of guitar"></a>
-                {% endfor %}
-            </div>
-        </ul>
+            <ul>
+                <div class="container">
+                    {% for image in guitar.images.all %}
+                        <a href='{{ image.image.url }}'><img src={{ image.image.url }} alt="An image of guitar"></a>
+                    {% endfor %}
+                </div>
+            </ul>
+        </aside>
+    </main>
+    <main>
+        <article>
+            <h2>Sample Audio</h2>
+                <audio controls>
+                    <source src= {{ guitar.voice_sample.url }} type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+        </article>
 
-        <h3>Sample Audio</h3>
-            <audio controls>
-                <source src= {{ guitar.voice_sample.url }} type="audio/mpeg">
-                Your browser does not support the audio element.
-            </audio>
-        <h3>Specifications</h3>
-        <table>
-            <colgroup span="2"></colgroup>
-            <tr>
-                <th>Component</th>
-                <th>Material</th>
-            </tr>
-            <tr>
-                <td>Top</td>
-                <td>{{ guitar.top_plates.name }}</td>
-            </tr>
-            <tr>
-                <td>Back plates and sides</td>
-                <td>{{ guitar.back_plates_and_sides.name }}</td>
-            </tr>
-            <tr>
-                <td>Neck</td>
-                <td>{{ guitar.neck_wood.name }}</td>
-            </tr>
-            <tr>
-                <td>Braces</td>
-                <td>{{ guitar.braces.name }}</td>
-            </tr>
-            <tr>
-                <td>Neck Joint</td>
-                <td>{{ guitar.neck_joint.name }}</td>
-            </tr>
-        </table>
-    </aside>
+        <aside>
+            <h2>Specifications</h2>
+            <table>
+                <colgroup span="2"></colgroup>
+                <tr>
+                    <th>Component</th>
+                    <th>Material</th>
+                </tr>
+                <tr>
+                    <td>Top</td>
+                    <td>{{ guitar.top_plates.name }}</td>
+                </tr>
+                <tr>
+                    <td>Back plates and sides</td>
+                    <td>{{ guitar.back_plates_and_sides.name }}</td>
+                </tr>
+                <tr>
+                    <td>Neck</td>
+                    <td>{{ guitar.neck_wood.name }}</td>
+                </tr>
+                <tr>
+                    <td>Braces</td>
+                    <td>{{ guitar.braces.name }}</td>
+                </tr>
+                <tr>
+                    <td>Neck Joint</td>
+                    <td>{{ guitar.neck_joint.name }}</td>
+                </tr>
+            </table>
+        </aside>
+    </main>
     {% endfor %}
 {%else %}
 	<p>No guitars </p>

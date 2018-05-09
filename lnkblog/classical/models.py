@@ -26,11 +26,5 @@ class Guitar(models.Model):
 
 class GuitarImage(models.Model):
 
-    guitar = models.ForeignKey(Guitar, on_delete=models.CASCADE)
-    image = models.ImageField(verbose_name=None, name=None, width_field=None, height_field=None, null=True)
-
-
-class GuitarImage(models.Model):
-
     guitar = models.ForeignKey(Guitar, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='media', verbose_name=None, name=None, width_field=None, height_field=None, null=True)
