@@ -18,6 +18,7 @@ dj-database-url = "*"
 "psycopg2" = "*"
 whitenoise = "*"
 ipdb = "*"
+pylibmc = "*"
 
 
 [requires]

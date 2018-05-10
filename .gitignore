@@ -1,4 +1,4 @@
 essentia/
 .idea/
 *.pyc
-*.sqlite3
+

@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bd4223b8c1e1b18079c02adf3538fd8a65ac5973da557dbae13eb12a74267b39"
+            "sha256": "ea4cc01b7d82bd56068e5e1d04223b800267fc1b0ea3eb37aacea4d1dff9f2a5"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -101,7 +101,7 @@
                 "sha256:d1aa2a11ba7b8f7b21ab852b1fb5afb277e1bb99d5dfc663380b5015c0d80c5a",
                 "sha256:8eb170f8d0d61825e09a95b38be068299ddeda82f35e96c3301a8a5e7604cb83"
             ],
-            "markers": "python_version in '2.6 2.7 3.2 3.3'",
+            "markers": "python_version == '2.7' or python_version == '3.3'",
             "version": "==2.3.2"
         },
         "pexpect": {
@@ -220,6 +220,12 @@
                 "sha256:dbae1046def0efb574852fab9e90209b23f556367b5a320c0bcb871c77c3e8cc"
             ],
             "version": "==2.2.0"
+        },
+        "pylibmc": {
+            "hashes": [
+                "sha256:fc54e28a9f1b5b2ec0c030da29c7ad8a15c2755bd98aaa4142eaf419d5fabb33"
+            ],
+            "version": "==1.5.2"
         },
         "pytz": {
             "hashes": [
