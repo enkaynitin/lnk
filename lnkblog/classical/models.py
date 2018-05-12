@@ -9,6 +9,7 @@ import os
 class Guitar(models.Model):
 
     plan_name = models.ForeignKey(Plan, on_delete=models.CASCADE)
+    description = models.TextField()
     voice_sample = models.FileField(upload_to='media', null=True)
     top_plates = models.ForeignKey(Wood, on_delete=models.CASCADE, related_name='guitar_top', null=True)
     back_plates_and_sides = models.ForeignKey(Wood, on_delete=models.CASCADE, related_name='guitar_back', null=True)
@@ -21,12 +22,6 @@ class Guitar(models.Model):
 
     def __unicode__(self):
         return self.plan_name
-
-
-class GuitarImage(models.Model):
-
-    guitar = models.ForeignKey(Guitar, on_delete=models.CASCADE)
-    image = models.ImageField(verbose_name=None, name=None, width_field=None, height_field=None, null=True)
 
 
 class GuitarImage(models.Model):

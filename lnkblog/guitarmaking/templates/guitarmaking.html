@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+{% if courses %}
+
+    {% for course in courses %}
+    <main>
+    <article>
+        <h2>{{ course.name }}</h2>
+
+        <p>{{ course.description }}</p>
+
+    </article>
+
+    <aside>
+        <ul>
+            <div class="container">
+                {% for image in course.course_images.all %}
+                    <a href='{{ image.url }}'><img src={{ image.url }} alt="A descriptive image for Course"></a>
+                {% endfor %}
+            </div>
+        </ul>
+    </aside>
+    </main>
+        {% for schedule in course.schedule.all %}
+        <main>
+        <article>
+            <h3>Week {{ schedule.week_number }}</h3>
+            <p>{{ schedule.learning }}</p>
+        </article>
+        <aside>
+            <ul>
+                <div class="container">
+                    <a href='{{ schedule.image.url }}'><img src={{ schedule.image.url }} alt="A descriptive image for module"></a>
+                </div>
+            </ul>
+        </aside>
+        </main>
+        {% endfor %}
+    {% endfor %}
+{% else %}
+	<p>No Courses </p>
+{% endif %}
+{% endblock %}
