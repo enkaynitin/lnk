@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Luthier Nitin Kumar</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Condensed:300|Cinzel+Decorative:700' rel='stylesheet' type='text/css'>
+	  {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+
+    <!--[if lt IE 9]>
+	  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+	<header>
+	
+      <h1>Luthier Nitin Kumar</h1>
+      <!--<img src="dove.png" alt="a simple dove logo"> -->
+
+	<nav>
+      <ul>
+        <li><a href="/">Home</a> </li>
+        <li><a href="/classical">Guitars</a></li>
+        <li><a href="/guitarmaking">Guitar Making</a></li>
+        <!--<li><a href="/songs">Learn Music</a></li>-->
+		<li><a href="/contact">Contact</a></li>
+      </ul>
+	</nav>
+	</header>
+
+
+    {% block content %}{% endblock %}
+
+		<footer>
+      		<p align="center">Luthier Nitin Kumar</p>
+      		<p></p>
+		</footer>
+  </body>
+</html>

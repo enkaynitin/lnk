@@ -1,0 +1,26 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[dev-packages]
+
+
+
+[packages]
+
+django = "*"
+pillow = "*"
+gunicorn = "*"
+dj-database-url = "*"
+"psycopg2" = "*"
+whitenoise = "*"
+ipdb = "*"
+pylibmc = "*"
+
+
+[requires]
+
+python_version = "3.5"
