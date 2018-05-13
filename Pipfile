@@ -19,6 +19,7 @@ dj-database-url = "*"
 whitenoise = "*"
 ipdb = "*"
 pylibmc = "*"
+python-memcached = "*"
 
 
 [requires]
