@@ -27,7 +27,9 @@
         <main>
         <article>
             <h3>Week {{ schedule.week_number }}</h3>
-            <p>{{ schedule.learning }}</p>
+            {% for learning in schedule.learning.all %}
+                <p>{{ learning.learning }}</p>
+            {% endfor %}
         </article>
         <aside>
             <ul>

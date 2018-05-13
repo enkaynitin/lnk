@@ -12,6 +12,9 @@ class Course(models.Model):
 class Schedule(models.Model):
     course = models.ForeignKey(Course,on_delete=models.CASCADE, related_name='schedule')
     week_number = models.IntegerField()
-    learning = models.TextField()
     image = models.ImageField(upload_to='media', verbose_name=None, name=None, width_field=None, height_field=None,
                               null=True)
+
+class Learning(models.Model):
+    schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE, related_name='learning')
+    learning = models.CharField(max_length=100)

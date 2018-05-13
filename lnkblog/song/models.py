@@ -28,7 +28,7 @@ class MusicNotations(models.Model):
     staff_notation = models.TextField()
 
     def __unicode__(self):
-        return se
+        return "{} {}".format(self.song, self.staff_notation)
 
 
 
