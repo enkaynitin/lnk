@@ -12,13 +12,10 @@
         <p>{{ course.description }}</p>
 
     </article>
-
     <aside>
         <ul>
             <div class="container">
-                {% for image in course.course_images.all %}
-                    <a href='{{ image.url }}'><img src={{ image.url }} alt="A descriptive image for Course"></a>
-                {% endfor %}
+                <a href='{{ course.image.url }}'><img src={{ course.image.url }} alt="A descriptive image for Course"></a>
             </div>
         </ul>
     </aside>
