@@ -1,3 +1,4 @@
+
 """
 Django settings for lnkblog project.
 
@@ -170,9 +171,9 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
         'LOCATION': [
-            '172.19.26.240:11211',
-            '172.19.26.242:11212',
-            '172.19.26.244:11213',
+            '0.0.0.0:11211',
+            '0.0.0.0:11212',
+            '0.0.0.0:11213',
         ]
     }
 }
