@@ -20,3 +20,7 @@ class Schedule(models.Model):
 class Learning(models.Model):
     schedule = models.ForeignKey(Schedule, on_delete=models.CASCADE, related_name='learning')
     learning = models.CharField(max_length=100)
+
+class Fee(models.Model):
+    course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='fee')
+    value = models.IntegerField()
