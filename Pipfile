@@ -20,6 +20,8 @@ whitenoise = "*"
 ipdb = "*"
 pylibmc = "*"
 python-memcached = "*"
+pytaglib = "*"
+mutagen = "*"
 
 
 [requires]
